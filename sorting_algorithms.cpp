@@ -21,7 +21,19 @@ void init_random(int *array, unsigned long length)
 }
 void bubble_sort(int array[], int length)
 {
-
+	bool exchanged;
+	do
+	{
+		exchanged = false;
+		for (int i = 0; i < length; i++) {
+			if (array[i] > array[i+1]) {
+				int temp = array[i];
+				array[i] = array[i + 1];
+				array[i + 1] = temp;
+				exchanged = true;
+			}
+		}
+} while(exchanged);
 }
 void insertion_sort(int array[], int length)
 {

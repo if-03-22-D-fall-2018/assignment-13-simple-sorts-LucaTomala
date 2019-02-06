@@ -11,20 +11,22 @@
  *-----------------------------------------------------------------------------
 */
 #include "stopwatch.h"
-
+#include <stdlib.h>
+float startedTime;
+float stopedTime;
 void start_stopwatch()
 {
-
+  startedTime = clock();
 }
 void stop_stopwatch()
 {
-
+  stopedTime = clock();
 }
-int elapsed_time()
+float elapsed_time()
 {
-
-}
-void sleep(int number)
-{
-
+  if(stopedTime < startedTime)
+  {
+    return (clock() - startedTime) / CLOCKS_PER_SEC;
+  }
+  return (stopedTime - startedTime) / CLOCKS_PER_SEC;
 }
