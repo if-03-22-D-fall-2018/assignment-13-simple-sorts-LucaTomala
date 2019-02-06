@@ -46,6 +46,6 @@ void insertion_sort(int array[], int length)
       array[j+1] = array[j];
       j--;
     }
-    array[i+j] = key;
+    array[i+1] = key;
   }
 }
